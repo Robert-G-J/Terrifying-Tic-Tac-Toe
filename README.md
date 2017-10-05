@@ -9,11 +9,14 @@ Clone this repository:
 $ git clone https://github.com/Robert-G-J/Terrifying-Tic-Tac-Toe.git
 $ cd Terrifying-Tic-Tac-Toe
 ```
-Install dependencies using Bundler:
+Install dependencies using [Bundler](http://www.bundler.io):
 ```
 $ gem install bundler
 $ bundle install
 ```
+
+To start play, enter `ruby game.rb` on the command line.
+
 # Approach
 
 ## Testing and CI
