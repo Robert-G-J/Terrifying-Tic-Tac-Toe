@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Robert-G-J/Terrifying-Tic-Tac-Toe.svg?branch=master)](https://travis-ci.org/Robert-G-J/Terrifying-Tic-Tac-Toe)
+[![Coverage Status](https://coveralls.io/repos/github/Robert-G-J/Terrifying-Tic-Tac-Toe/badge.svg?branch=master)](https://coveralls.io/github/Robert-G-J/Terrifying-Tic-Tac-Toe?branch=master)
+
 # Tic-Tac-Toe
 
 A fully tested and object-oriented TTT with an unbeatable computer player, built from scratch.
@@ -21,7 +24,7 @@ To start play, enter `ruby game.rb` on the command line.
 
 ## Testing and CI
 
-Implemented with RSpec and Travis CI.
+Implemented with [RSpec](https://github.com/rspec) and [Travis CI](https://travis-ci.org).
 
 ## User Stories
 
