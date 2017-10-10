@@ -7,7 +7,7 @@ class Game
     @cell = ''
   end
 
-  def play(token)
+  def play(token, index)
     raise 'Cell Occupied' if @cell != ''
     @cell = token
   end
