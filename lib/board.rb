@@ -8,6 +8,6 @@ class Board
   end
   
   def occupied?(index)
-    state[index] != ''
+    state[index.to_i] != nil
   end
 end

@@ -14,5 +14,13 @@ describe Board do
         expect(board.occupied?(0)).to be true
       end
     end
+    
+    context 'false' do
+      it 'has no token' do
+        board.state = []
+        p board.occupied?(0)
+        expect(board.occupied?(0)).to be false
+      end
+    end
   end
 end
