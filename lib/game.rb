@@ -1,9 +1,9 @@
 class Game
-
-  attr_reader :cell
+  attr_reader :board, :cell
   attr_writer :cell
 
-  def initialize
+  def initialize(board)
+    @board = board
     @cell = ''
   end
 
@@ -11,5 +11,4 @@ class Game
     raise 'Cell Occupied' if @cell != ''
     @cell = token
   end
-
 end
