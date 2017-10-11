@@ -5,8 +5,9 @@ class Board
   attr_reader :state
   attr_writer :state
 
-  def initialize
+  def initialize(board_size = 3)
     @state = []
+    @board_size = board_size
   end
   
   def occupied?(index)
@@ -18,11 +19,15 @@ class Board
   end
 
   def winning_line?
-    lines = rows + columns + first_diagonal + second_diagonal
-    p lines
-    lines.any? do |line|
+    line_permutations.any? do |line|
       line.count('X') == 3
     end
+  end
+
+  private 
+
+  def line_permutations
+    rows + columns + first_diagonal + second_diagonal
   end
 
   def rows

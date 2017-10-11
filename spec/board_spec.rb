@@ -1,7 +1,8 @@
 require 'board'
 
 describe Board do
-  subject(:board) { described_class.new }
+  BOARD_SIZE = 3
+  subject(:board) { described_class.new(BOARD_SIZE) }
 
   describe '#occupied' do
     before do
@@ -57,6 +58,16 @@ describe Board do
                        nil, 'X', nil,
                        'X', 'O', nil]
         expect(board.game_over?).to be true
+      end
+    end
+    context 'game not over' do
+      it 'replies false' do
+        board.state = [
+          nil, 'O', 'X', 
+          nil, 'X', nil,
+          nil, 'O', nil
+        ]
+        expect(board.game_over?).to be false
       end
     end
   end
