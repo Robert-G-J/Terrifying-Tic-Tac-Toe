@@ -1,8 +1,7 @@
 require 'Matrix'
 
 class Board
-
-  attr_reader :state
+  attr_reader :state, :board_size
   attr_writer :state
 
   def initialize(board_size = 3)
@@ -20,7 +19,7 @@ class Board
 
   def winning_line?
     line_permutations.any? do |line|
-      line.count('X') == 3
+      line.count('X') == board_size
     end
   end
 

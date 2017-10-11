@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:human) { double(:human) }
+  let(:human) { double(:human, token: '🏄') }
   let(:computer) { double(:computer) }
   let(:board) { double(:board, occupied?: false) }
   subject(:game) { described_class.new(
