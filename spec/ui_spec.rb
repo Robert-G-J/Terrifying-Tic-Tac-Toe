@@ -1,4 +1,4 @@
-require 'UI'
+require 'ui'
 
 describe UI do
   subject(:ui) { described_class.new }
