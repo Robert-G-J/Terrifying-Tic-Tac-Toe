@@ -11,6 +11,7 @@ def run_game
   computer = Computer.new(token:'🤖') 
   game = Game.new(board: board, player1: human, player2: computer)
   ui.welcome
+  ui.request_game_mode
 end
 
 run_game
