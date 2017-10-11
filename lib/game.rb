@@ -1,5 +1,6 @@
 class Game
   attr_reader :board, :player1, :player2, :current_player
+  attr_writer :current_player
 
   def initialize(args)
     @board = args[:board]
@@ -13,6 +14,7 @@ class Game
     @board.state[index] = token
   end
 
-  private
-  attr_writer :current_player
+  def switch_player
+    current_player == player1 ? current_player = player2 : current_player = player1
+  end
 end

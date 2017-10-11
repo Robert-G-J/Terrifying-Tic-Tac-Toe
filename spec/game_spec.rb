@@ -28,6 +28,13 @@ describe Game do
     it { is_expected.to respond_to :current_player }
   end
 
+  describe '#switch_player' do
+    it 'changes the current_player' do
+      game.current_player = human
+      expect(game.switch_player).to eq computer
+    end
+  end
+
   describe '#place_token:' do
     it { is_expected.to respond_to(:place_token).with(2).arguments }
 
