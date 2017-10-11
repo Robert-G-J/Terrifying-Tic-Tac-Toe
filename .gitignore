@@ -12,3 +12,4 @@
 coverage
 .coveralls.yml
 lor
+.simplecov
