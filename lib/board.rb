@@ -1,3 +1,5 @@
+require 'Matrix'
+
 class Board
 
   attr_reader :state
@@ -16,7 +18,8 @@ class Board
   end
 
   def winning_line?
-    lines = rows + columns
+    lines = rows + columns + first_diagonal + second_diagonal
+    p lines
     lines.any? do |line|
       line.count('X') == 3
     end
@@ -28,5 +31,13 @@ class Board
 
   def columns
     rows.transpose
+  end
+
+  def first_diagonal
+    [Matrix.rows(rows).each(:diagonal).to_a]
+  end
+  
+  def second_diagonal
+    [Matrix.rows(rows.reverse).each(:diagonal).to_a]
   end
 end

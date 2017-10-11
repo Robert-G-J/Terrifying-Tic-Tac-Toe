@@ -37,10 +37,24 @@ describe Board do
                        nil, 'O', nil]
         expect(board.game_over?).to be true
       end
-      
+ 
       it 'is won by column' do
         board.state = ['X', 'O', nil, 
                        'X', nil, nil,
+                       'X', 'O', nil]
+        expect(board.game_over?).to be true
+      end
+
+      it 'is won by first diagonal' do
+        board.state = ['X', 'O', nil, 
+                       nil, 'X', nil,
+                       nil, 'O', 'X']
+        expect(board.game_over?).to be true
+      end
+
+      it 'is won by second diagonal' do
+        board.state = [nil, 'O', 'X', 
+                       nil, 'X', nil,
                        'X', 'O', nil]
         expect(board.game_over?).to be true
       end
