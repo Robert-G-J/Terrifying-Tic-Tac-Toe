@@ -15,8 +15,4 @@ describe 'Features of UI: ' do
     game.place_token('X', 0)
     expect { game.place_token('O', 0) }.to raise_exception('Cell Occupied')
   end
-
-  xit 'Game is over if all fields are taken' do
-  end
-
 end
