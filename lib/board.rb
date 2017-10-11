@@ -1,4 +1,4 @@
-require 'Matrix'
+require 'matrix'
 
 class Board
   attr_reader :state, :board_size
