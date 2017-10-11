@@ -1,7 +1,7 @@
 require 'game'
 require 'board'
 
-describe 'Features of UI: ' do
+describe 'Features: ' do
   let(:human_player) { Human.new(token:'🏄') }
   let(:computer_player) { Computer.new(token:'🤖') }
   let(:board) { Board.new }
