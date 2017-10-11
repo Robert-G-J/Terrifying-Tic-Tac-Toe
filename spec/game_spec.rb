@@ -24,6 +24,10 @@ describe Game do
     end
   end
 
+  describe '#current_player' do
+    it { is_expected.to respond_to :current_player }
+  end
+
   describe '#place_token:' do
     it { is_expected.to respond_to(:place_token).with(2).arguments }
 
