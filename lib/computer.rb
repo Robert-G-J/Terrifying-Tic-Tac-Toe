@@ -1,7 +1,8 @@
-class Computer
-  attr_reader :token
+require_relative 'player'
 
-  def initialize(token)
-    @token = token
+class Computer < Player
+
+  def initialize(args)
+    super(args)
   end
 end

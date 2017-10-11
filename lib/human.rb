@@ -1,7 +1,8 @@
-class Human
-  attr_reader :token
+require_relative 'player'
 
-  def initialize(token)
-    @token = token
+class Human < Player
+
+  def initialize(args)
+    super(args)
   end
 end

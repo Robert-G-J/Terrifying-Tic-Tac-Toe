@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:human) { double(:human, token: '🏄') }
-  let(:computer) { double(:computer) }
+  let(:computer) { double(:computer, token: '🤖') }
   let(:board) { double(:board, occupied?: false) }
   subject(:game) { described_class.new(
     player1: human,
