@@ -25,10 +25,10 @@ describe Board do
 
   describe '#game_over?' do
     context 'true' do
-      xit 'is a tie' do
-        board.state = ['X', 'O', 'X',
-                       'O', 'X', 'O',
-                       'X', 'O', 'X']
+      it 'is a tie' do
+        board.state = ['X', 'O', 'O',
+                       'O', 'X', 'X',
+                       'X', 'X', 'O']
         expect(board.game_over?).to be true
       end
 
@@ -60,6 +60,7 @@ describe Board do
         expect(board.game_over?).to be true
       end
     end
+
     context 'game not over' do
       it 'replies false' do
         board.state = [

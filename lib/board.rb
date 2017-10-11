@@ -15,7 +15,7 @@ class Board
   end
 
   def game_over?
-    winning_line?
+    winning_line? || tied?
   end
 
   def winning_line?
@@ -25,6 +25,14 @@ class Board
   end
 
   private 
+
+  def tied?
+    full_board? && !winning_line?
+  end
+
+  def full_board?
+    state.none? { |field| field == nil } 
+  end
 
   def line_permutations
     rows + columns + first_diagonal + second_diagonal
