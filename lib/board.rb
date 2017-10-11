@@ -12,17 +12,21 @@ class Board
   end
 
   def game_over?
-    winning_row?
+    winning_line?
   end
 
-  def winning_row?
-    value = rows.any? do |row|
-      row.count('X') == 3
+  def winning_line?
+    lines = rows + columns
+    lines.any? do |line|
+      line.count('X') == 3
     end
-    value
   end
 
   def rows
     state.each_slice(3).to_a
+  end
+
+  def columns
+    rows.transpose
   end
 end

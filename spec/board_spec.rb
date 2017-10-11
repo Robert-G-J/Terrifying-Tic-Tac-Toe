@@ -37,6 +37,13 @@ describe Board do
                        nil, 'O', nil]
         expect(board.game_over?).to be true
       end
+      
+      it 'is won by column' do
+        board.state = ['X', 'O', nil, 
+                       'X', nil, nil,
+                       'X', 'O', nil]
+        expect(board.game_over?).to be true
+      end
     end
   end
 end
