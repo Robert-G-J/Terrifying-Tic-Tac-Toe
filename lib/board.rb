@@ -5,7 +5,7 @@ class Board
   attr_writer :state
 
   def initialize(board_size = 3)
-    @state = []
+    @state = Array.new(board_size**2)
     @board_size = board_size
   end
   

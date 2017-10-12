@@ -4,6 +4,12 @@ describe Board do
   BOARD_SIZE = 3
   subject(:board) { described_class.new(BOARD_SIZE) }
 
+  describe 'state initialisation' do
+    it 'sets board state to square of board size' do
+      expect(board.state.length).to eq 9
+    end
+  end
+
   describe '#occupied' do
     before do
       board.state = ['X']
