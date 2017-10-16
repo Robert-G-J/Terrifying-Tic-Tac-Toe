@@ -102,6 +102,18 @@ To achieve this, I would:
  - Expand the UI class so that the board can be rendered, and all messages to stdout that might be sent are included.
  - Create an abstract GameWrapper class that pulls the UI class and Game class together.
    - This class would manage running the Game and taking data from stdin from a user.
- - Abstract the code from main.rb into the GameWrapper; this is inline with the responsibilities outlined in the prior bullet
+ g Abstract the code from main.rb into the GameWrapper; this is inline with the responsibilities outlined in the prior bullet
  - The Board class has been written with an injected magic number that defines the number of fields it has;
  I will change this so that the Board is passed this value at instantiation in the same manner as the Game class.
+
+### Steps achieved since extension
+- Introduced a GameConstructor as the 'GameWrapper'. It is initialised with a UI and Game and will run in main.rb to replace the code that sits there, including the code that grabs user input.
+- Created a method in the UI that renders the board onto the commandline so that players can see it such that they can play
+- Updated the Board class so that its #board_size can be instantiated with any integer, but defaults to 3 (3x3 grid) 
+
+#### Further improvements
+- This game could now be (just about) played by two human players. It needs:
+  - the computer player coded according to that which I mentioned above (using the minimax algorithm)
+  - the turn taking organised- currently only one token is placed on the grid
+
+- It also desperately needs input validation, as if a user were to enter a value outside of that asked for, the program would certainly fail to manage it.
