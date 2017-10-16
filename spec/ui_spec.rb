@@ -20,4 +20,10 @@ describe UI do
     3. 🤖  vs. 🤖\n"
     expect { ui.request_game_mode }.to output(message).to_stdout
   end
+
+  it 'prints the board' do
+    board = double(:board, state: [ nil, 'X', 'O', nil, 'X', nil, nil, nil, nil], board_size: 3)
+    printed_board =  "0 | X | O \n=========\n3 | X | 5 \n=========\n6 | 7 | 8 \n"
+    expect { ui.print_board(board) }.to output(printed_board).to_stdout
+  end
 end

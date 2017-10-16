@@ -11,7 +11,12 @@ def run_game
   computer = Computer.new(token:'🤖') 
   game = Game.new(board: board, player1: human, player2: computer)
   ui.welcome
-  ui.request_game_mode
+  until game.game_over? do 
+    ui.pick_square
+    field_choice = gets.chomp.to_i
+    game.place_token('X', field_choice)
+    ui.print_board(game.board)
+  end
 end
 
 run_game
