@@ -1,9 +1,10 @@
 require 'game_constructor'
 
 describe GameConstructor do
-  subject(:gc) { described_class.new(ui: ui) }
   let(:ui) { double(:ui) }
-  
+  let(:game) { double(:game) }
+  subject(:gc) { described_class.new(game: game, ui: ui) }
+
   describe 'starting a new game' do
     it { is_expected.to respond_to :new_game }
   end
