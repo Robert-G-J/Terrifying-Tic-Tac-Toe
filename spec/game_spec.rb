@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   let(:human) { double(:human, token: '🏄') }
   let(:computer) { double(:computer, token: '🤖') }
-  let(:board) { double(:board, occupied?: false) }
+  let(:board) { spy(:board, occupied?: false) }
   subject(:game) { described_class.new(
     player1: human,
     player2: computer,
@@ -32,6 +32,13 @@ describe Game do
     it 'changes the current_player' do
       game.current_player = human
       expect(game.switch_player).to eq computer
+    end
+  end
+
+  describe '#game_over?' do
+    it '-> Delegates checking to the Board class' do
+      game.game_over?
+      expect(game.board).to have_received(:game_over?) 
     end
   end
 
