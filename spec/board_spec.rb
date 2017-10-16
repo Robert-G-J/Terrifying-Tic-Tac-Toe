@@ -6,7 +6,7 @@ describe Board do
 
   describe 'state initialisation' do
     it 'sets board state to square of board size' do
-      expect(board.state.length).to eq 9
+      expect(board.state.length).to eq BOARD_SIZE**2
     end
   end
 

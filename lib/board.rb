@@ -38,7 +38,7 @@ class Board
   end
 
   def rows
-    state.each_slice(3).to_a
+    state.each_slice(board_size).to_a
   end
 
   def columns
