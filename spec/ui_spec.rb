@@ -9,21 +9,18 @@ describe UI do
   end
 
   it 'Requests the player pick a position' do
-    message = "Pick a square from 1-9\n"
+    message = "Pick a square from 0-8\n"
     expect { ui.pick_square }.to output(message).to_stdout
   end
 
-  it 'Asks player to pick a game mode' do
-    message = "Pick a game mode:\n 
-    1. 🙂  vs. 🙂\n
-    2. 🙂  vs. 🤖\n 
-    3. 🤖  vs. 🤖\n"
-    expect { ui.request_game_mode }.to output(message).to_stdout
+  it 'Indicates a token is being placed' do
+    message = "Placing token: \n"
+    expect { ui.placing_token }.to output(message).to_stdout
   end
 
   it 'prints the board' do
     board = double(:board, state: [ nil, 'X', 'O', nil, 'X', nil, nil, nil, nil], board_size: 3)
-    printed_board =  "0 | X | O \n=========\n3 | X | 5 \n=========\n6 | 7 | 8 \n"
+    printed_board =  "0 | X | O \n=========\n3 | X | 5 \n=========\n6 | 7 | 8 \n\n"
     expect { ui.print_board(board) }.to output(printed_board).to_stdout
   end
 end

@@ -12,10 +12,10 @@ def run_game
   game = Game.new(board: board, player1: human, player2: computer)
   ui.welcome
   until game.game_over? do 
+    ui.print_board(game.board)
     ui.pick_square
     field_choice = gets.chomp.to_i
     game.place_token('X', field_choice)
-    ui.print_board(game.board)
   end
 end
 
